@@ -1,0 +1,25 @@
+<main>
+  <div class="container">
+    <div class="card" *ngFor="let nave of naves">
+      <div class="card__header">
+        <h2>{{nave.nombre}}</h2>
+        <span>{{nave.categoriaNave.nombre}}</span>
+
+      </div>
+      <div class="card__body">
+        <ul>
+          <li><strong>Potencia:</strong> {{nave.potencia}} hp</li>
+          <li><strong>Altura:</strong> {{nave.altura}} m</li>
+          <li><strong>Peso:</strong> {{nave.peso}} kg</li>
+        </ul>
+      </div>
+      <div class="card__footer">
+        {{nave.pais}}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>

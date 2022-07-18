@@ -1,0 +1,55 @@
+<form action="" [formGroup]="form">
+  <p-toast></p-toast>
+  <h1>Agregar nave</h1>
+
+  <div class="basic-info">
+    <h3>Informacion basica</h3>
+    <input id="name" type="text" pInputText formControlName="nombre" placeholder="Nombre de nave" [ngClass]="{
+      'ng-invalid ng-dirty': form.get('nombre')?.touched && form.get('nombre')?.invalid
+    }">
+
+    <div>
+      <p-dropdown id="countries" [options]="countries" formControlName="pais" optionLabel="label" optionValue="label"
+        placeholder="Pais perteneciente" [ngClass]="{
+          'ng-invalid ng-dirty': form.get('pais')?.touched && form.get('pais')?.invalid
+        }"></p-dropdown>
+    </div>
+    <div>
+      <p-dropdown id="categories" [options]="categories" formControlName="idCategoria" optionLabel="label"
+        optionValue="label" placeholder="Categoria de la nave" [ngClass]="{
+          'ng-invalid ng-dirty': form.get('idCategoria')?.touched && form.get('idCategoria')?.invalid
+        }"></p-dropdown>
+    </div>
+  </div>
+
+  <div class="features">
+    <h3>Caracteristicas de la nave</h3>
+    <div class="col-12 md:col-4">
+      <div class="p-inputgroup">
+        <input type="text" pInputText pKeyFilter="num" placeholder="Potencia" formControlName="potencia" [ngClass]="{
+          'ng-invalid ng-dirty': form.get('potencia')?.touched && form.get('potencia')?.invalid
+        }">
+        <span class="p-inputgroup-addon">hp</span>
+      </div>
+    </div>
+    <div class="col-12 md:col-4">
+      <div class="p-inputgroup">
+        <input type="text" pInputText pKeyFilter="num" placeholder="Altura" formControlName="altura" [ngClass]="{
+          'ng-invalid ng-dirty': form.get('altura')?.touched && form.get('altura')?.invalid
+        }">
+        <span class="p-inputgroup-addon">m</span>
+      </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <div class="p-inputgroup">
+        <input type="text" pInputText pKeyFilter="num" placeholder="Peso" formControlName="peso" [ngClass]="{
+          'ng-invalid ng-dirty': form.get('peso')?.touched && form.get('peso')?.invalid
+        }">
+        <span class="p-inputgroup-addon">kg</span>
+      </div>
+    </div>
+  </div>
+  <button pButton pRipple type="button" [disabled]="form.invalid || buttonDisabled" label="Añadir nave"
+    class="p-button-rounded p-button-secondary" (click)="onSubmit()"></button>
+</form>
