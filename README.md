@@ -1,8 +1,8 @@
 # Paso #1 | Aplicaciones requeridas
 
-Motor de bd Postgres
-Gradle
-NodeJs
+* Motor de bd Postgres
+* Gradle
+* NodeJs
 
 
 # Paso #2 | Configuración de BD
